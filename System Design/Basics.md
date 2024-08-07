@@ -42,3 +42,27 @@ Finally we are going to used both the advantages to our application, that is we 
 - Inter process communication(ipc), Consistence from vertical scaling.
 
 That is we start with a vertical scaling and make it into horizontal based on demand.
+
+# Capacity Estimation:
+prerequisite:
+
+![alt text](image-3.png)
+![alt text](image-2.png)
+![alt text](image.png)
+![alt text](image-1.png)
+
+terms used above are:
+
+- L1 cache reference: This refers to accessing data from the Level 1 cache, which is the smallest and fastest cache memory in a computer's CPU.
+- Branch mispredict: This occurs when a CPU incorrectly predicts the outcome of a conditional branch in code execution, leading to a performance penalty.
+- L2 cache reference: Similar to L1, but refers to accessing data from the larger, slightly slower Level 2 cache.
+- Mutex lock/unlock: A mutex (mutual exclusion) is a programming concept used to prevent multiple threads from simultaneously accessing shared resources. Locking and unlocking a mutex takes time.
+- Main memory reference: This refers to accessing data from the computer's main RAM (Random Access Memory).
+- Compress 1K bytes with Zippy: Zippy is a compression algorithm. This line shows the time taken to compress 1 kilobyte of data using this algorithm.
+- Send 2K bytes over 1 Gbps network: This indicates the time required to send 2 kilobytes of data over a network with 1 gigabit per second bandwidth.
+- Read 1 MB sequentially from memory: This refers to reading 1 megabyte of data in sequence from the computer's main memory.
+- Round trip within same datacenter: This is the time taken for a data packet to travel from one server to another within the same datacenter and back.
+- Disk seek: The time required for a hard disk drive's read/write head to move to the correct position to access data.
+- Read 1 MB sequentially from network: Similar to item 8, but reading from a network instead of local memory.
+- Read 1 MB sequentially from disk: Reading 1 megabyte of data in sequence from a hard disk drive.
+- Send packet CA->Netherlands->CA: This represents the time for a data packet to travel from California to the Netherlands and back.
