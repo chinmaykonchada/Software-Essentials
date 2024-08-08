@@ -66,3 +66,18 @@ terms used above are:
 - Read 1 MB sequentially from network: Similar to item 8, but reading from a network instead of local memory.
 - Read 1 MB sequentially from disk: Reading 1 megabyte of data in sequence from a hard disk drive.
 - Send packet CA->Netherlands->CA: This represents the time for a data packet to travel from California to the Netherlands and back.
+
+# HTTP and HTTPS protocols
+HyperText Transfer Protocol(HTTP) is an application layer protocol that is used to access and transfer data(text, images, video, multimedia, etc) over the world wide web.
+
+In HTTP, the client sends a request message to the server. After the client responds, HTTP establishes a TCP connection between the client and the server. HTTP delivers a request to the server, which collects the data that was requested. After the server sends data to the client, the connection will be terminated.
+
+## Features of HTTP
+- connectionless
+- media independent
+- stateless
+
+# HTTPS
+Hypertext Transfer Protocol Secure is a secure extension or version of HTTP that is used for providing security to the data sent over the world wide web.
+
+This protocol allows transferring the data in an encrypted form which is particularly important when users transmit sensitive data such as login credentials.
