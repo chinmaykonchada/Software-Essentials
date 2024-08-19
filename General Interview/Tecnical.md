@@ -27,3 +27,20 @@
 int can store from [-2^31, 2^31 - 1] because:
 - there 32 bits for int, and highest significant bit is used for storing sign of the number, so if the rest of the bits are filled with 1's then num=2^30+2^29+2^28....+2^0 which is equal to 2^31 - 1 .
 - but it is not the case with negative numbers bcz computer store negative numbers in 2's complement form, so -2^31 can be stored as follows: -2^31(1000000...0) is first complemented we get 0111111...1 then we add 1 to least significant bit we get (1000000...0) which is -2^31 . 
+
+# Differences between Module, Library, Package, Framework, API, SDK.
+    Real world example:
+    Module = Your fingers
+    Package= Your hands
+    Library = Building your home
+    Framework = Buying a home
+- Module: It's a reusable piece of software that can be imported and used in other parts of a program.
+- Library: A collection of related modules or functions that provide a specific set of functionalities, pre-written code that can be used to avoid writing code from scratch.
+    -   Example: React.js, NumPy
+- Package: A package is a collection of related modules or libraries bundled together for distribution and deployment.
+    - Example: NumPy.
+- Framework: A framework is like a structure that provides a base for the application development process. With the help of a framework, you can avoid writing everything from scratch.
+    - Example: Express.js
+- Api: An API specifies how software components should interact, allowing different software applications to communicate with each other
+- Sdk:  A set of development tools that allows you to create applications for a specific platform. It typically includes APIs, libraries, documentation, and other resources.
+    - Example: Android sdk.
