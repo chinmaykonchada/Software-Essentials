@@ -81,3 +81,20 @@ In HTTP, the client sends a request message to the server. After the client resp
 Hypertext Transfer Protocol Secure is a secure extension or version of HTTP that is used for providing security to the data sent over the world wide web.
 
 This protocol allows transferring the data in an encrypted form which is particularly important when users transmit sensitive data such as login credentials.
+
+# TCP model
+Transmission Control Protocol/Internet Protocol(TCP/IP) is a practical network model.
+
+TCP is a set of communication protocols that supports network communication.
+
+The TCP model is subdivided into five layers, each containing specific protocols.
+
+![alt text](image-5.png)
+
+- Physical Layer: 
+The physical layer translates message bits into signals for transmission on a medium, i.e. the physical layer is the place where the real communication takes place.
+    - For example, electrical signals are generated for copper cables, light signals are generated for optical fibers, and radio waves are generated for air or vacuum.
+- Data Link Layer(DLL):
+The DLL is subdivided into 2 layers: MAC(Media Access Control), LLC(Logical Link Control)
+    - The MAC layer is responsible for data encapsulation(Framing) of IP packets from the network layer into frames. Framing means DLL adds a header(which contains the MAC address of source and destination) and a trailer(which contains error-checking data) at the beginning and end of IP packets.
+    - LLC deals with flow control and error control. Flow control: Limits how much data a sender can transfer without overwhelming the receiver. Error Control: Error in the data transmission can be detected by checking the error detection bits in the trailer of the frame.

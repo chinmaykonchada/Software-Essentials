@@ -64,3 +64,24 @@ The time slices are typically very small, ranging from a few milliseconds to a f
     Improved System Responsiveness
 
 They enable multitasking, interactive computing, server virtualization, cloud computing, real-time systems, collaboration, and batch processing.
+
+## Multiprocessor Operating Systems in OS
+When two or more central processing units operate within a single computer system, it is referred as a multiprocessor system.
+
+Multiprocessor operating systems offer enhanced performance, improved reliability, scalability, and load balancing, allowing for efficient utilization of multiple processors.
+
+## Desktop Systems in OS
+A desktop system refers to a personal computer setup that is typically used on a desk or table. 
+
+### Components of a Desktop System
+- Central Processing Unit (CPU):
+- Random Access Memory (RAM): RAM is a type of volatile memory that temporarily stores data and instructions for the CPU to access quickly. 
+- Storage Devices:
+- Graphics Processing Unit (GPU): It offloads the graphical processing tasks from the CPU, ensuring smooth visuals and enabling resource-intensive applications such as gaming, video editing, and 3D modeling. 
+- Input and Output Devices:
+
+## Clustered System in OS
+A clustered system refers to a group of interconnected computers, or nodes, that collaborate closely to perform tasks in parallel.These nodes work together as a single system, sharing resources and distributing workload effectively. By leveraging the combined power of multiple machines, clustered systems achieve high availability, scalability, and improved performance.
+
+## Real Time Operating System in OS
+Real-Time Operating Systems differ from general-purpose operating systems due to their ability to execute time-critical tasks predictably and reliably. They are primarily classified into two categories: hard real-time systems and soft real-time systems.
