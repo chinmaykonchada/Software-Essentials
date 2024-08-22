@@ -60,3 +60,13 @@ Example: When you type a URL in a web browser, the browser (client) initiates a 
 
 # Dynamic Host Configuration Protocol (DHCP)
 The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automate the process of configuring devices on IP networks. DHCP allows devices to automatically receive an IP address and other necessary network configuration details, such as the default gateway, subnet mask, and DNS servers, without manual intervention.
+
+Examples:
+- Device A:
+MAC Address: 00:1A:2B:3C:4D:5E
+IP Address: 192.168.1.10
+- Device B:
+    MAC Address: 00:1A:2B:3C:4D:5F
+    IP Address: 192.168.1.11
+
+In the example above, each device has a unique MAC address, and within the same local network, they have unique IP addresses. However, if **Device A moves to a different network, its IP address may change (due to DHCP), but its MAC address will remain the same.**
