@@ -44,3 +44,19 @@ int can store from [-2^31, 2^31 - 1] because:
 - Api: An API specifies how software components should interact, allowing different software applications to communicate with each other
 - Sdk:  A set of development tools that allows you to create applications for a specific platform. It typically includes APIs, libraries, documentation, and other resources.
     - Example: Android sdk.
+
+# 3-way hand shake:
+The 3-way handshake is a process used in the Transmission Control Protocol (TCP) to establish a reliable connection between a client and a server before data transmission begins. It ensures that both the client and the server are synchronized and ready to start communication.
+
+Illustration of the 3-Way Handshake Process:
+- Client → Server: Sends SYN (Sequence number = x)
+- Server → Client: Sends SYN-ACK (Sequence number = y, Acknowledgment = x+1)
+- Client → Server: Sends ACK (Acknowledgment = y+1)
+
+here SYN (Synchronize) and ACK (Acknowledge).
+
+**Scenario of the 3-Way Handshake:**
+Example: When you type a URL in a web browser, the browser (client) initiates a 3-way handshake with the web server. This ensures that the connection is established before the requested webpage data is transmitted.
+
+# Dynamic Host Configuration Protocol (DHCP)
+The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automate the process of configuring devices on IP networks. DHCP allows devices to automatically receive an IP address and other necessary network configuration details, such as the default gateway, subnet mask, and DNS servers, without manual intervention.
