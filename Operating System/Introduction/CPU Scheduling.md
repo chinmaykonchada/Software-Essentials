@@ -51,3 +51,16 @@ The following are kept track of by the PCB:
 - Memory Management Information – The operating system will use a lot of memory and it needs to know information like – page table, memory limits, Segment table to execute different programs MIM has all the information about this.
 - Accounting Information – As the name suggest it will contain all the information about the time process took, Execution ID, Limits etc.
 - I/O Status – The list of all the information of I/O the process can use.
+
+# Process Scheduling
+The decision to move different parallel processes competing with one another for execution, to different states like Ready to running or running to exit state based on a certain decision strategy is known as Process Scheduling in Operating System.
+
+Process Scheduling Types
+- Long Term(Job Scheduling)
+- Medium Term(CPU Scheduling)
+- Short Term(Swapping)
+
+**Context Switch:** A context switch is a procedure that a computer’s CPU (central processing unit) follows to change from one task (or process) to another while ensuring that the tasks do not conflict.
+- Context Switch in OS
+Context Switching is a cost and time saving measure performed by the CPU that is handing task 1 and has to stop executing this task to priority execute another task 2.
+-  To do this effectively, the system stores the initial task in its processed form so that when this task is resumed, it can be loaded and resumed from the same progress point as earlier.
