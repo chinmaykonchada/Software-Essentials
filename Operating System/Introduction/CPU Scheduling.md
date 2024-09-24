@@ -17,6 +17,8 @@
 - Non preemptive scheduling
 
 # Process in Operating System
+A process is a program that is being executed in an operating system 
+
 The common process states include:
 - New: This is the initial state when a process is being created.
 - Ready: The process is loaded into main memory and waiting to be assigned to a processor.
