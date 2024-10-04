@@ -4,7 +4,7 @@ The main aim of OOP is to bind together the data and the functions that operate 
 
 ![alt text](image.png)
 
-Refer: https://gist.github.com/krishnadey30/cb64bf875f29b5a6c91f79ea38a2ba4e
+Reference: https://gist.github.com/krishnadey30/cb64bf875f29b5a6c91f79ea38a2ba4e , chartgpt, google and many more..
 ## Class
 It is a user-defined data type, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A class is like a blueprint for an object.
 
@@ -245,4 +245,229 @@ Shape* shape1 = new Circle(); allows us to use a pointer to the abstract base cl
 Abstraction in C++ allows you to define what an object does through interfaces (abstract classes) without exposing how it does it. This makes your code more modular, maintainable, and easier to extend by focusing only on the essential details and hiding unnecessary implementation complexities.
 
 ## Inheritance
+It allows a class to inherit properties and behaviors (methods) from another class.
+
+- Sub Class: The class that inherits properties from another class is called Sub class or Derived Class.
+- Super Class: The class whose properties are inherited by sub class is called Base Class or Super class.
+
+### Basic Syntax of Inheritance:
+- class Subclass : public Superclass
+- class Subclass : Superclass   // By default its private inheritance
+- class subclass : protected Superclass
+
+Types of Inheritance:
+Single, Multiple, Multilevel, Hierarchical, and Hybrid Inheritance
+
+
+### Points to Remember:
+- Whether derived class's default constructor is called or parameterised is called, **base class's default constructor is always called before derived** inside them.
+- To call base class's parameterised constructor inside derived class's parameterised constructor, we must mention it explicitly while declaring derived class's parameterized constructor.
+```
+class Derived : public Base { 
+ int y;
+    public:
+    // parameterized constructor
+    Derived(int j):Base(j) { 
+        y = j;
+        cout << "Derived Parameterized Constructor\n";
+    }
+};
+```
+- All the Base class's constructors are called inside derived class's constructor, in the same order in which they are inherited.
+```
+class A : public B, public C ;
+In this case **first B class constructor** is called followed by C class then finally A class;
+```
 ## Polymorphism
+Polymorphism is one of the core concepts of Object-Oriented Programming (OOP) in C++. It allows objects of different classes to be treated as objects of a common base class, and it provides the ability to use a single interface to represent different types. 
+### In C++, polymorphism is mainly divided into two types:
+- Compile-time Polymorphism (Static Polymorphism)
+- Runtime Polymorphism (Dynamic Polymorphism)
+
+### Compile-time Polymorphism (Static Polymorphism)
+Compile-time polymorphism is achieved through function overloading and operator overloading. The decision about which function to invoke is made at compile-time.
+
+#### Function Overloading
+Function overloading allows multiple functions with the same name but different parameter types or counts to coexist.
+```
+#include <iostream>
+using namespace std;
+
+class Example {
+public:
+    void print(int i) {
+        cout << "Integer: " << i << endl;
+    }
+    void print(double d) {
+        cout << "Double: " << d << endl;
+    }
+    void print(string s) {
+        cout << "String: " << s << endl;
+    }
+};
+
+int main() {
+    Example obj;
+    obj.print(5);         // Calls print(int)
+    obj.print(3.14);      // Calls print(double)
+    obj.print("Hello");   // Calls print(string)
+    return 0;
+}
+```
+#### Operator Overloading
+Operator overloading allows defining how operators work with user-defined types (classes/structs).
+```
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    int real, imag;
+public:
+    Complex(int r = 0, int i = 0) : real(r), imag(i) {}
+    
+    // Overloading the '+' operator
+    Complex operator + (const Complex& obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+    
+    void print() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(3, 4), c2(1, 2);
+    Complex c3 = c1 + c2; // Calls the overloaded '+' operator
+    c3.print();
+    return 0;
+}
+```
+### Runtime Polymorphism (Dynamic Polymorphism)
+Runtime polymorphism is achieved using inheritance and virtual functions. The decision about which function to invoke is made at runtime, and this allows for flexibility in cases where derived classes provide different implementations of functions defined in the base class.
+
+#### Virtual Functions
+In runtime polymorphism, a virtual function is a function in the base class that is expected to be overridden in derived classes. When a function is declared as virtual, the base class ensures that the derived class's version of the function is called, even when using a base class pointer/reference to an object of the derived class.
+```
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {  // Virtual function
+        cout << "Base class show" << endl;
+    }
+    void display() {
+        cout << "Base class display" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {  // Override virtual function
+        cout << "Derived class show" << endl;
+    }
+    void display() {
+        cout << "Derived class display" << endl;
+    }
+};
+
+int main() {
+    Base *basePtr;      // Base class pointer
+    Derived derivedObj; // Derived class object
+    basePtr = &derivedObj;
+    
+    // Calls Derived class's show function (runtime polymorphism)
+    basePtr->show();  // Outputs: Derived class show
+    
+    // Calls Base class's display function (no polymorphism, static binding)
+    basePtr->display(); // Outputs: Base class display
+    return 0;
+}
+```
+Key Points:
+- Virtual functions enable runtime polymorphism.
+- The base class pointer (or reference) is used to point to a derived class object.
+- The overridden function in the derived class is invoked, not the base class function.
+- For polymorphism to work, the function in the base class must be declared virtual, and the derived class can override it.
+
+#### Pure Virtual Functions and Abstract Classes
+A pure virtual function is a virtual function that has no implementation in the base class and must be overridden in the derived class. A class that contains at least one pure virtual function is called an abstract class, and it cannot be instantiated.
+```
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual void draw() = 0; // Pure virtual function
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Circle" << endl;
+    }
+};
+
+class Square : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Square" << endl;
+    }
+};
+
+int main() {
+    Shape *shape1 = new Circle();
+    Shape *shape2 = new Square();
+    
+    shape1->draw();  // Outputs: Drawing Circle
+    shape2->draw();  // Outputs: Drawing Square
+    
+    delete shape1;
+    delete shape2;
+    return 0;
+}
+```
+#### Key Points about Pure Virtual Functions:
+- A class containing at least one pure virtual function is an abstract class.
+- Abstract classes cannot be instantiated directly; they can only be used as base classes.
+- Derived classes must implement the pure virtual function, otherwise, they will also be abstract.
+
+#### Virtual Destructor
+In the context of inheritance, if you use a base class pointer to delete an object of a derived class, the destructor of the base class must be declared virtual to ensure proper cleanup of derived class resources.
+```
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    Base() { cout << "Base class constructor" << endl; }
+    virtual ~Base() { cout << "Base class destructor" << endl; } // Virtual destructor
+};
+
+class Derived : public Base {
+public:
+    Derived() { cout << "Derived class constructor" << endl; }
+    ~Derived() { cout << "Derived class destructor" << endl; }
+};
+
+int main() {
+    Base *basePtr = new Derived();  // Base class pointer pointing to Derived object
+    delete basePtr;  // Properly calls both Base and Derived class destructors
+    return 0;
+}
+```
+Key Points:
+If a base class has a virtual destructor, deleting an object through a base class pointer ensures that the derived class destructor is called first, followed by the base class destructor.
+
+
+## Key Takeaways
+- Polymorphism allows for different classes to be treated as instances of the same base class, either at compile-time (function overloading, operator overloading) or at runtime (virtual functions).
+- Virtual functions provide dynamic dispatch, enabling runtime polymorphism.
+- Pure virtual functions enforce a contract for derived classes to implement specific functions, making the base class abstract.
+- Always use a virtual destructor in base classes if derived classes manage resources (like dynamic memory), to ensure proper cleanup.
+
+Polymorphism promotes flexibility and extensibility in your code, allowing you to write more modular and maintainable software.
