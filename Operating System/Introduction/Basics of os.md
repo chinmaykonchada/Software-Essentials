@@ -10,3 +10,14 @@ An operating system is software program that manages both hardware and software 
     Storage Management
     Application Handling
 ![alt text](image.png)
+
+Contest:
+- Introduction
+- Types of Operating Systems
+- CPU Scheduling
+- Process Synchronization
+- Deadlocks
+- Popular Algorithms
+- Processes and Threads
+- Memory Management
+- File and Disk Management

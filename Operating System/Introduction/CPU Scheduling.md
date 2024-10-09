@@ -95,10 +95,10 @@ Different types of Scheduling Algorithms –
 - Response Time – can be defined as the time interval between when the process was submitted and when the first response is given to the process.     
 
 ## Non Preemptive Scheduling vs Preemptive Scheduling
-- Non Preemptive Scheduling($ old so No switches):
+- Non Preemptive Scheduling($ not able to stop so No-switches ):
 In this type of scheduling, if a process enters the CPU and gets processing time. The process will keep on executing until it has terminated or has to forcibly go to waiting state as it needs a resource that it locked by another parallel process. Example – SJF i.e. Shortest Job First (Non Preemptive)
 
-- Preemptive Scheduling ($ new version so switches):
+- Preemptive Scheduling ($ stop so switches ):
 In this type of scheduling, if a process enters the CPU and gets processing time. It can get switched by another process that have higher priority. Example – SRTF i.e. Shortest Remaining time First (Also known as SJF – Preemptive) 
 
 # FCFS Scheduling Algorithm 
@@ -115,6 +115,7 @@ Disadvantages of FCFS Algorithm
 formulas:
 - Turn Around Time = Completion Time – Arrival Time   
 - Waiting Time = Turnaround time – Burst Time 
+
 ![alt text](image-3.png)
 
 # Shortest Job First Scheduling Non Preemptive
@@ -141,7 +142,7 @@ In which the processor is allocated to the job having minimum CPU burst time, bu
 
 Shortest Job First Preemptive Scheduling is also known as Shortest remaining Time(SRT) or Shortest Next Time(SNT).
 
-## key difference between preemptive and preemptive version of SJF.
+## key difference between preemptive and non-preemptive version of SJF.
 - In preemptive version of SJF when a new process arrives at the ready queue and a previous process is not finished and is being executed. If the next CPU burst of new process is shorter than current executing process, then in preemptive version , it will stop that process and will start executing the newly arrived process.
     - The current state of the process is saved by the **context switch** and the CPU is given to another process.
 
@@ -166,3 +167,33 @@ Advantages –
 
 Disadvantages –
 - There is an overhead of context switching as mentioned earlier, too small of quantum time causes overhead and slower execution of process. So, time quantum must be large with respect to Context Switch time.
+
+# Priority Scheduling Algorithm
+In Priority Scheduling, processes are assigned Priorities and the process with the highest is executed first. Each process is assigned a priority & processes are given CPU time according to their priority.
+
+Priority may also be of two types :
+- Static
+- Dynamic
+
+### Preemptive vs Non Preemptive
+Preemptive Priority Scheduling Algorithm are those algorithm where if a new process having higher priority arrives than the process currently executing , CPU stops the current executing process and executes the newly arrived higher priority process. Non Preemptive Priority Scheduling Algorithm is an algorithm where even if a higher priority process comes, if a process is already being executed, it will first finish the current process . Only then, next process will be executed.
+
+### Priority Scheduling Example 2 (Non-Preemptive)
+![alt text](image-6.png)
+
+### Priority Scheduling Algorithm Preemptive
+![alt text](image-7.png)
+
+# Convoy Effect in Scheduling Operating System
+Convoy effect ,or commonly referred to as **starvation** in FCFS is a situation which makes the CPU and other resources idle for most of the time.
+
+# Difference Between Scheduler and Dispatcher
+**Schedulers** selects a process out of the several processes that need to be executed. 
+
+**Dispatcher** performs the function of switching contexts, switching to user mode and many other
+
+# Preemptive Scheduling vs Non Preemptive Scheduling
+**Preemptive Scheduling:** Scheduling in which a process is switched from the running state to the ready state and from the waiting state to the ready state.
+- In preemptive type of scheduling algorithm, a low priority process gets suspended from its execution, if a high priority process is waiting in the same queue for its execution. 
+
+**Non Pre-emptive Scheduling:** In this case, once the process is allocated the CPU, it is only released when the processing is over.

@@ -1,4 +1,4 @@
-# Different Types of Operating Systms 
+# Different Types of Operating Systems 
     Batch System
     Distributed Operating System
     Time Sharing System
