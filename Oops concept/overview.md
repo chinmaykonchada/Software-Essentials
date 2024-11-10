@@ -350,7 +350,7 @@ int main() {
 Runtime polymorphism is achieved using inheritance and virtual functions. The decision about which function to invoke is made at runtime, and this allows for flexibility in cases where derived classes provide different implementations of functions defined in the base class.
 
 #### Virtual Functions
-In runtime polymorphism, a virtual function is a function in the base class that is expected to be overridden in derived classes. When a function is declared as virtual, the base class ensures that the derived class's version of the function is called, even when using a base class pointer/reference to an object of the derived class.
+In runtime polymorphism, a virtual function is a function in the base class that is expected to be **overridden** in derived classes. When a function is declared as virtual, the base class ensures that the derived class's version of the function is called, even when using a base class pointer/reference to an object of the derived class.
 ```
 #include <iostream>
 using namespace std;
